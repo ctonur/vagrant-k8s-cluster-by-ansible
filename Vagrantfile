@@ -19,10 +19,12 @@ Vagrant.configure("2") do |config|
                 node_ip: "192.168.50.10",
             }
         end
+            node.vm.provision "shell" do |s|
+          s.path = "src/apply.sh"
+        end
     end
 
     (1..N).each do |i|
-        config.vm.synced_folder "/Users/bulentparlakol/Desktop/onur/data", "/data", type: "nfs" , nfs_version: "4"
         config.vm.define "node-#{i}" do |node|
             node.vm.box = IMAGE_NAME
             node.vm.network "private_network", ip: "192.168.50.#{i + 10}"
@@ -34,11 +36,10 @@ Vagrant.configure("2") do |config|
                 }
             end
           node.vm.provision "shell" do |s|
-          s.path = "app/on.sh"
+          s.path = "src/build.sh"
         end
       end
     end
 end
 
-vagrant ALL=(ALL) NOPASSWD:ALL
 
