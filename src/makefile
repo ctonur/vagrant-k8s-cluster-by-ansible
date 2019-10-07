@@ -2,16 +2,13 @@ ifndef TAG
 $(error The TAG variable is missing.)
 endif
 
-ifndef PROJE
-$(error The PROJE variable is missing.)
-endif
 
 ifndef APP
 $(error The APP variable is missing.)
 endif
 
 
-IMAGE := $(PROJE)/$(APP)
+IMAGE := $(APP)
  
  
 build:
