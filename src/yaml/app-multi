@@ -10,7 +10,7 @@ spec:
     - nodePort: 30800
       port: 8080 
       targetPort: 3000
-
+---
 #apiVersion: v1
 #kind: Service
 #metadata:
