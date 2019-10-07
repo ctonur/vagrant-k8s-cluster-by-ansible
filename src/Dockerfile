@@ -16,9 +16,8 @@ RUN chown -R 1001:1001 /app
 
 USER 1001
 
-EXPOSE 3000
 
-ENTRYPOINT ["python","app.py"]
+#ENTRYPOINT ["python","app.py"]
 
 
-#CMD ["gunicorn", "-b", "0.0.0.0:3000", "app:application"]
+CMD ["gunicorn", "-b", "0.0.0.0:3000", "app:application"
