@@ -53,7 +53,7 @@ spec:
         - name: MYSQL_DATABASE
           value: app
         - name: MYSQL_USER
-          value: admin
+          value: root
         - name: MYSQL_PASSWORD
           value: password
         ports:
